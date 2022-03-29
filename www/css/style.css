@@ -142,8 +142,6 @@ body {
 @media (min-width: 600px) {
     body {
         text-align: center;
-        max-width: 600px;
-        max-height: 400px;
         margin: 10vmin;
         background-color: blue;
     }
