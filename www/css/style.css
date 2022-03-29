@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 10vmin;
+    background-color: blue;
+}
+
+.header {
+    grid-area: header;
+    background-color: violet;
+    margin: 2vmin;
+}
+
+.header:hover {
+    background-color: purple;
+}
+
+.div-three {
+    display: none;
+}
+
+.div-three:hover {
+    background-color: royalblue;
+}
+
+.div-one {
+    grid-area: div-one;
+    background-color: orange;
+    margin: 2vmin;
+}
+
+.div-one:hover {
+    background-color: orangered;
+}
+
+.div-two {
+    grid-area: div-two;
+    background-color: yellow;
+    margin: 2vmin;
+}
+
+.div-two:hover {
+    background-color: yellowgreen;
+}
+
+.div-four {
+    grid-area: div-four;
+    background-color: tomato;
+    margin: 2vmin;
+}
+
+.div-four:hover {
+    background-color: red;
+}
+
+.div-five {
+    grid-area: div-five;
+    background-color: tomato;
+    margin: 2vmin;
+}
+
+.div-five:hover {
+    background-color: red;
+}
+
+.div-six {
+    grid-area: div-six;
+    background-color: greenyellow;
+    margin: 2vmin;
+    border: solid white;
+}
+
+.div-six:hover {
+    background-color: green;
+}
+
+.div-grid {
+    grid-area: div-grid;
+}
+
+/*#################
+### grid containers
+###################*/
+
+.grid-containers {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 50%, auto;
+    grid-template-rows: 50px 80px 70px;
+    grid-template-areas:
+        'header         header'
+        'first-grid     first-grid'
+        'second-grid    second-grid';
+}
+
+/*#####################
+### first section grid
+#######################*/
+
+.first-grid {
+    grid-area: first-grid;
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 'div-one div-two';
+}
+
+/*#####################
+### second section grid
+#######################*/
+
+.second-grid {
+    grid-area: second-grid;
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-areas: 'div-grid div-six';
+}
+
+/*#####################
+### div grid
+#######################*/
+
+.div-grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        'div-four'
+        'div-five';
+}
+
+/*#####################
+### div grid
+#######################*/
+
+@media (min-width: 600px) {
+    body {
+        text-align: center;
+        max-width: 600px;
+        max-height: 400px;
+        margin: 10vmin;
+        background-color: blue;
+    }
+
+    .div-three {
+        grid-area: div-three;
+        background-color: rgb(39, 206, 228);
+        margin: 2vmin;
+        display: unset;
+    }
+
+    .grid-containers {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 50%, auto;
+        grid-template-rows: 80px 90px 70px;
+        grid-template-areas:
+            'header         header'
+            'first-grid     first-grid'
+            'second-grid    second-grid';
+    }
+
+    .first-grid {
+        display: grid;
+        grid-template-columns: 30%, 30%, auto;
+        grid-template-areas: 'div-one div-two div-three';
+    }
+
+    .second-grid {
+        display: grid;
+        grid-template-columns: 180px, auto;
+        grid-template-areas: 'div-grid   div-six';
+    }
+
+    .div-five {
+        display: none;
+    }
+
+    .div-grid {
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-areas: 'div-four';
+    }
+
+    .div-six {
+        grid-area: div-six;
+        background-color: greenyellow;
+        margin: 2vmin;
+        border: solid black;
+    }
+}
+
+/*#####################
+### fade
+#######################*/
+.fade {
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
